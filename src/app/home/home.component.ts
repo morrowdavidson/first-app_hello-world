@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HousingLocationComponent } from '../housing-location/housing-location.component'; 
+import { Component } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { HousingLocationComponent } from '../housing-location/housing-location.component'
+import { HousingLocation } from '../housing-location'
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city">
+        <input type="text" placeholder="Filter by city" />
         <button class="primary" type="submit">Search</button>
       </form>
     </section>
@@ -17,9 +18,18 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
       <app-housing-location></app-housing-location>
     </section>
   `,
-  styleUrls: ['./home.component.css']
-
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
+  readonly baseUrl = 'https://angular.dev/assets/tutorials/common'
+  housingLocation: HousingLocation = {
+    id: 9999,
+    name: 'Test Home',
+    city: 'Test city',
+    state: 'ST',
+    photo: `${this.baseUrl}/example-house.jpg`,
+    availableUnits: 99,
+    wifi: true,
+    laundry: false,
+  }
 }
