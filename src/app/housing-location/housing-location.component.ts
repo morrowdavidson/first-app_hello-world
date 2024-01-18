@@ -15,7 +15,7 @@ import { HousingLocation } from '../housing-location'
       </p>
     </section>
   `,
-  styles: [],
+  styleUrls: ['./housing-location.component.css'],
 })
 export class HousingLocationComponent {
   @Input() housingLocation!: HousingLocation
